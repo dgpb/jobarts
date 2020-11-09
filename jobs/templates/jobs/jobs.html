@@ -1,0 +1,40 @@
+{% extends 'jobs/base.html' %}
+
+{% block title %}
+
+Oportunidades de Empleo
+
+{% endblock %}
+
+{% block header %}
+
+<div class="container">
+<br>
+<form>
+  <fieldset>
+    <legend>Busca una oferta de empleo</legend>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Ej: Diseñador Gráfico">
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="form-group">
+          <select class="form-control" id="exampleSelect1">
+            <option>Part Time</option>
+            <option>Full Time</option>
+            <option>Freelance</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <button type="submit" class="btn btn-success">Buscar</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+</div>
+
+{% endblock %}
