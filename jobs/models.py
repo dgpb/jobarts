@@ -9,7 +9,7 @@ class Job(models.Model):
     salary = models.CharField(max_length=200)
     city = models.CharField(max_length=200)
     district = models.CharField(max_length=200)
-    publication_date = models.CharField(max_length=200)
+    publication_date = models.DateTimeField()
     job_url = models.CharField(max_length=200)
     job_type = models.CharField(max_length=200)
 

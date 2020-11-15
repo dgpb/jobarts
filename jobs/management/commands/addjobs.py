@@ -1,6 +1,9 @@
 from django.core.management.base import BaseCommand
 from jobs.models import Job
 import json
+from datetime import datetime
+import dateparser
+
 
 class Command(BaseCommand):
     help = 'Set up the database'
@@ -9,6 +12,10 @@ class Command(BaseCommand):
         with open('static/data.json', 'r') as handle:
             big_json = json.loads(handle.read())
             for item in big_json:
+
+                #Convertir fecha
+                publication_date = dateparser.parse('publication_date')
+
                 existing_job = Job.objects.filter(
 
                     job_title = item['job_title'],
