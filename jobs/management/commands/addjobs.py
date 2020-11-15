@@ -9,12 +9,11 @@ class Command(BaseCommand):
     help = 'Set up the database'
 
     def handle(self, *args: str, **options: str):
-        with open('static/data.json', 'r') as handle:
+        with open('static/newdata.json', 'r') as handle:
             big_json = json.loads(handle.read())
             for item in big_json:
 
-                #Convertir fecha
-                publication_date = dateparser.parse('publication_date')
+                dt = dateparser.parse(item['publication_date'])
 
                 existing_job = Job.objects.filter(
 
@@ -22,7 +21,7 @@ class Command(BaseCommand):
                     company = item['company'],
                     company_url = item['company_url'],
                     description = item['description'],
-                    publication_date = item['publication_date'],
+                    publication_date = dt,
                     salary = item['salary'],
                     city = item['city'],
                     district = item['district'],
@@ -37,7 +36,7 @@ class Command(BaseCommand):
                         company = item['company'],
                         company_url = item['company_url'],
                         description = item['description'],
-                        publication_date = item['publication_date'],
+                        publication_date = dt,
                         salary = item['salary'],
                         city = item['city'],
                         district = item['district'],
