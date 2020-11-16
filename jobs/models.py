@@ -15,3 +15,6 @@ class Job(models.Model):
 
     def __str__(self):
         return self.job_title
+
+    def job_title_as_a_list(self):
+        return self.job_title.split('-')[0]

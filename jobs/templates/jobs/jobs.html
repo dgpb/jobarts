@@ -38,3 +38,7 @@ Oportunidades de Empleo
 </div>
 
 {% endblock %}
+
+{% block pagination %}
+  {%  include 'jobs/pagination.html' with page=jobs %}
+{% endblock %}

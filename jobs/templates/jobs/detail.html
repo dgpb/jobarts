@@ -9,7 +9,7 @@ Detalle
   {% block left %}
 
           <br>
-          <h1 class="text-success">Diseñador Gráfico - Egresado</h1>
+          <h1 class="text-success">{{ job.job_title_as_a_list }}</h1>
           <h6 class="text-primary">Hace 1 día</h6>
           <h5>Dp audiovisual EIRL</h5>
           <br>
@@ -22,23 +22,13 @@ Detalle
           <h4 class="text-info">Salario</h4>
           <p>A tratar</p>
           <h4 class="text-info">Descripción</h4>
-          <h6>Requisitos :</h6>
-          <ul>
-            <li>Manejo de Adobe Illustrator y Photoshop.</li>
-          </ul>
-          <h6>Funciones :</h6>
-          <ul>
-            <li>Creativo en el desarrollo de artes.</li>
-            <li>Amante de las tendencias.</li>
-            <li>Que no tema proponer ideas nuevas.</li>
-            <li>Manejo de diversos formatos en las redes sociales.</li>
-            <li>Manejo de Adobe Illustrator, Photoshop, Premier y After.</li>
-          </ul>
+            <p>
+            {{ job.description | default:"No especificado" }}
           <br>
           <h4 class="text-info">Tipo de Empleo</h4>
-          <h6>Full Time</h6>
+          <h6>{{ job.job_type }}</h6>
           <h4 class="text-info">Dirección</h4>
-          <h6>Calle San Martin 818 Miraflores</h6>
+          <h6>{{ job.district }}</h6>
           <br>
           <button type="button" class="btn btn-warning">Postular</button>
 
