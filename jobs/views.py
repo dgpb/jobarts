@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 
+
 # Create your views here.
 def home(request):
     jobs = Job.objects.all()[:5]
@@ -23,8 +24,8 @@ def jobs(request):
     return render(request, 'jobs/jobs.html', {'page' : page, 'jobs' : jobs})
 
 def detail(request, pk):
-    jobs = Job.objects.get(id=pk)
+    job = Job.objects.get(id=pk)
 
-    context = {'jobs' : jobs}
+    context = {'job' : job}
 
     return render(request, 'jobs/detail.html', context)

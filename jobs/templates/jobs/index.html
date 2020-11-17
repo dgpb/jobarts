@@ -21,11 +21,15 @@ Home
 
 </div>
 
+<div class="container">
+  <h4>Últimas Oportunidades de Empleo</h4>
+</div>
+
 {% endblock %}
 
 {% block pagination %}
   <br>
   <div class="container">
-    <button type="button" class="btn btn-danger">Ver más Empleos</button>
+    <a href="{% url 'jobs' %}"><button type="button" class="btn btn-danger">Ver más Empleos</button></a>
   </div>
 {% endblock %}

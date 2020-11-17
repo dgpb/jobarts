@@ -10,26 +10,31 @@ Detalle
 
           <br>
           <h1 class="text-success">{{ job.job_title_as_a_list }}</h1>
-          <h6 class="text-primary">Hace 1 día</h6>
-          <h5>Dp audiovisual EIRL</h5>
+          <h6 class="text-primary">{{ job.publication_date }}</h6>
+          <h5>{{ job.company }}</h5>
           <br>
-          <button type="button" class="btn btn-success btn-sm">Visitar web</button>
+          <a href="{{ job.company_url }}" target="_blank"><button type="button" class="btn btn-success btn-sm">Visitar web</button></a>
           <hr>
 
           <h2 class="text-success">Detalles</h2>
           <h4 class="text-info">Ciudad</h4>
-          <p>Lima</p>
+          <p>{{ job.city }}</p>
           <h4 class="text-info">Salario</h4>
           <p>A tratar</p>
           <h4 class="text-info">Descripción</h4>
-            <p>
-            {{ job.description | default:"No especificado" }}
+
+          <ul class="list-unstyled">
+            {% for line in job.description_as_a_list %}
+            <li>{{ line }}</li>
+            {% endfor %}
+          </ul>
+
           <br>
           <h4 class="text-info">Tipo de Empleo</h4>
-          <h6>{{ job.job_type }}</h6>
+          <p>{{ job.job_type }}</p>
           <h4 class="text-info">Dirección</h4>
-          <h6>{{ job.district }}</h6>
+          <p>{{ job.district | capfirst }}</p>
           <br>
-          <button type="button" class="btn btn-warning">Postular</button>
+          <a href="{{ job.job_url }}" target="_blank"><button type="button" class="btn btn-warning">Postular</button></a>
 
     {% endblock %}
