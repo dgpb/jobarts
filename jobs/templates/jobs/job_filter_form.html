@@ -1,17 +1,20 @@
+
 <div class="container">
 <br>
-<form>
+<form method='POST' action='/jobs/'>
+  {% csrf_token %}
   <fieldset>
     <h4>Busca una oportunidad de empleo</h4>
+    <br>
     <div class="row">
       <div class="col-sm-6">
         <div class="form-group">
-          <input class="form-control" type="search" name="job_title_as_a_list" placeholder="Ej: Diseñador Gráfico">
+          <input class="form-control" type='text' name='title' placeholder="Ej: Diseñador Gráfico">
         </div>
       </div>
       <div class="col-sm-2">
         <div class="form-group">
-          <select class="form-control" name="job_type" id="exampleSelect1">
+          <select class="form-control" name='category' id="exampleSelect1">
             <option>Todos</option>
             <option>Tiempo Completo</option>
             <option>Remoto</option>
