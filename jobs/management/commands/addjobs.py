@@ -12,6 +12,9 @@ class Command(BaseCommand):
         with open('static/newdata.json', 'r') as handle:
             big_json = json.loads(handle.read())
             for item in big_json:
+                if len(item['description']) == 0:
+                    print('Not created. Description empty')
+                    continue
 
                 dt = dateparser.parse(item['publication_date'])
 
