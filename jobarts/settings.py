@@ -26,7 +26,7 @@ SECRET_KEY = '##dt&f+p6il52@^gj=g@r0q&=v#-a2$2md0-uy&q*th^z-!#*l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['job-arts.com']
+ALLOWED_HOSTS = ['job-arts.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'jobarts.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jobartsDB',
-        'USER': 'postgres',
-        'PASSWORD': 'postdaniel',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'jobartsdb',
+        'USER': 'danieldb',
+        'PASSWORD': 'Daniel_db38$$',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '',
 
     }
 }
@@ -127,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/images/'
 
