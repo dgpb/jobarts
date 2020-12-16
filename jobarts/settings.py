@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'jobartsdb',
         'USER': 'danieldb',
-        'PASSWORD': 'Daniel_db38$$',
+        'PASSWORD': 'Daniel_db38$',
         'HOST': 'localhost',
         'PORT': '5432',
 
