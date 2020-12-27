@@ -26,7 +26,7 @@ SECRET_KEY = '##dt&f+p6il52@^gj=g@r0q&=v#-a2$2md0-uy&q*th^z-!#*l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['job-arts.com', 'localhost', '127.0.0.1', '167.99.107.22']
+ALLOWED_HOSTS = ['job-arts.com', 'localhost', '127.0.0.1', '167.99.107.22', 'www.job-arts.com']
 
 
 # Application definition
