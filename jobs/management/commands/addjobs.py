@@ -15,9 +15,11 @@ class Command(BaseCommand):
                 if len(item['description']) == 0:
                     print('Not created. Description empty')
                     continue
-                if item['publication_date'] == null:
+
+                if item['publication_date'] = []:
                     print('Not created. Description empty')
                     continue
+
                 dt = dateparser.parse(item['publication_date'])
                 new_date = date(dt.year, dt.month, dt.day)
 
