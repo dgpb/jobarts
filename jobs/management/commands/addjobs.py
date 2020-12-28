@@ -16,12 +16,11 @@ class Command(BaseCommand):
                     print('Not created. Description empty')
                     continue
 
-                if item['publication_date'] = []:
-                    print('Not created. Description empty')
-                    continue
-
-                dt = dateparser.parse(item['publication_date'])
-                new_date = date(dt.year, dt.month, dt.day)
+                if item['publication_date'] != null:
+                    dt = dateparser.parse(item['publication_date'])
+                    new_date = date(dt.year, dt.month, dt.day)
+                else:
+                    dt = timezone.now()
 
                 existing_job = Job.objects.filter(
 
