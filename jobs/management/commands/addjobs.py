@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand
+from django.utils import timezone
 from jobs.models import Job
 import json
 from datetime import datetime, date
@@ -16,7 +17,7 @@ class Command(BaseCommand):
                     print('Not created. Description empty')
                     continue
 
-                if len(item['publication_date']) == 0:
+                if item['publication_date'] != None:
                     dt = dateparser.parse(item['publication_date'])
                     new_date = date(dt.year, dt.month, dt.day)
                 else:
