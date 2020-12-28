@@ -9,7 +9,7 @@ class Command(BaseCommand):
     help = 'Set up the database'
 
     def handle(self, *args: str, **options: str):
-        with open('static/newdat2a.json', 'r') as handle:
+        with open('static/jobs28122020.json', 'r') as handle:
             big_json = json.loads(handle.read())
             for item in big_json:
                 if len(item['description']) == 0:
