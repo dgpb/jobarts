@@ -17,7 +17,7 @@ class Command(BaseCommand):
                     print('Not created. Description empty')
                     continue
 
-                if item['publication_date'] = 0:
+                if item['publication_date'] != None:
                     dt = dateparser.parse(item['publication_date'])
                 else:
                     dt = timezone.now()
