@@ -18,6 +18,10 @@
 
               {% if job.job_type == 'Tiempo Completo' %}
                 <span class="badge badge-pill badge-success">{{ job.job_type }}</span>
+              {% elif job.job_type == 'Medio Tiempo' %}
+                <span class="badge badge-pill badge-warning">{{ job.job_type }}</span>
+              {% elif job.job_type == 'Remoto' %}
+                <span class="badge badge-pill badge-danger">{{ job.job_type }}</span>
               {% else %}
                 <span class="badge badge-pill badge-info">{{ job.job_type }}</span>
               {% endif %}
