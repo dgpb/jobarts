@@ -20,7 +20,7 @@ class Command(BaseCommand):
                 if item['publication_date'] != None:
                     dt = dateparser.parse(item['publication_date'])
                 else:
-                    dt = timezone.now()
+                    dt = datetime.now()
 
                 new_date = date(dt.year, dt.month, dt.day)
 
