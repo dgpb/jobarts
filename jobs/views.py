@@ -27,12 +27,14 @@ def jobs(request):
 
     else:
         title = request.POST.get('title')
-        #category = request.POST.get('category')
+        category = request.POST.get('category')
 
         jobs = Job.objects.filter(job_title__icontains=title)
 
-        #if category:
-            #jobs = jobs.filter(job_type=category)
+        if category == None:
+            jobs = Job.objects.all()
+        else:
+            jobs = jobs.filter(job_type=category)
 
         paginator = Paginator(jobs, 10)
         page = request.GET.get('page')
