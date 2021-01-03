@@ -11,22 +11,6 @@ def home(request):
     return render(request, 'jobs/index.html', {'jobs' : jobs})
 
 def jobs(request):
-
-    if title = request.POST.get('title'):
-        jobs = Job.objects.filter(job_title__icontains=title)
-
-        paginator = Paginator(jobs, 10)
-        page = request.GET.get('page')
-
-        try:
-            jobs = paginator.page(page)
-        except PageNotAnInteger:
-            jobs = paginator.page(1)
-        except EmptyPage:
-            jobs = paginator.page(paginator.num_pages)
-
-
-    """
     if request.method == 'GET':
 
         jobs = Job.objects.all()
@@ -59,9 +43,6 @@ def jobs(request):
             jobs = paginator.page(1)
         except EmptyPage:
             jobs = paginator.page(paginator.num_pages)
-
-    """        
-
 
     return render(request, 'jobs/jobs.html', {'page' : page, 'jobs' : jobs})
 
