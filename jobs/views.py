@@ -25,11 +25,25 @@ def jobs(request):
         except EmptyPage:
             jobs = paginator.page(paginator.num_pages)
 
-    else:
-        title = request.POST.get('title')
-        category = request.POST.get('category')
+    elif title = request.POST.get('title'):
 
         jobs = Job.objects.filter(job_title__icontains=title)
+
+        paginator = Paginator(jobs, 10)
+        page = request.GET.get('page')
+
+        try:
+            jobs = paginator.page(page)
+        except PageNotAnInteger:
+            jobs = paginator.page(1)
+        except EmptyPage:
+            jobs = paginator.page(paginator.num_pages)
+
+    else:
+        #title = request.POST.get('title')
+        category = request.POST.get('category')
+
+        #jobs = Job.objects.filter(job_title__icontains=title)
 
         if category:
             jobs = jobs.filter(job_type=category)
