@@ -31,9 +31,7 @@ def jobs(request):
 
         jobs = Job.objects.filter(job_title__icontains=title)
 
-        if category == None:
-            jobs = Job.objects.all()
-        else:
+        if category:
             jobs = jobs.filter(job_type=category)
 
         paginator = Paginator(jobs, 10)
