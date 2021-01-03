@@ -26,10 +26,10 @@ def jobs(request):
             jobs = paginator.page(paginator.num_pages)
 
     else:
-        title = request.POST.get('title')
+        #title = request.POST.get('title')
         category = request.POST.get('category')
 
-        jobs = Job.objects.filter(job_title=title)
+        #jobs = Job.objects.filter(job_title__icontains=title)
 
         if category:
             jobs = jobs.filter(job_type=category)
@@ -44,6 +44,10 @@ def jobs(request):
             jobs = paginator.page(1)
         except EmptyPage:
             jobs = paginator.page(paginator.num_pages)
+
+        else:
+            jobs = Job.objects.all()
+
 
 
 
