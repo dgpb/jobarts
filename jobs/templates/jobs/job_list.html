@@ -9,7 +9,7 @@
             </div>
             <div class="col-2">
               <h5 class="text-success">Ciudad</h5>
-              <p>{{ job.city }}</p>
+              <p>{{ job.city | default:"Lima"}}</p>
             </div>
             <div class="col-2">
               <p >{{ job.publication_date | date:"D d M Y" }} </p>
