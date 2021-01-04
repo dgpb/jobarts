@@ -5,7 +5,7 @@
           <div class="row">
             <div class="col-6">
               <h5 class="text-success"><a href="{% url 'detail' job.id %}">{{ job.job_title_as_a_list }}</a></h5>
-              <p>{{ job.description | slice:'11:120' | truncatechars_html:100 | default:"No especificado" }}</p>
+              <p>{{ job.description | truncatechars_html:100 | default:"No especificado" }}</p>
             </div>
             <div class="col-2">
               <h5 class="text-success">Ciudad</h5>
