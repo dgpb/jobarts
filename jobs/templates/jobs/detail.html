@@ -39,7 +39,7 @@ Detalle
           <h4 class="text-info">Tipo de Empleo</h4>
           <p>{{ job.job_type }}</p>
           <h4 class="text-info">Dirección</h4>
-          <p>{{ job.district | capfirst | default:"No especificado" }}</p>
+          <p>{{ job.district | default:"No especificado" }}</p>
           <br>
           <a href="{{ job.job_url }}" target="_blank"><button type="button" class="btn btn-warning">Postular</button></a>
 
