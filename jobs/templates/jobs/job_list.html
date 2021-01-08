@@ -20,11 +20,16 @@
                 <span class="badge badge-pill badge-success">{{ job.job_type }}</span>
               {% elif job.job_type == 'Medio Tiempo' %}
                 <span class="badge badge-pill badge-warning">{{ job.job_type }}</span>
+              {% elif job.job_type == 'Part - time' %}
+                <span class="badge badge-pill badge-warning">Medio Tiempo</span>
               {% elif job.job_type == 'Remoto' %}
                 <span class="badge badge-pill badge-danger">{{ job.job_type }}</span>
               {% elif job.job_type == 'Full time' %}
                 <span class="badge badge-pill badge-success">Tiempo Completo</span>
+              {% elif job.job_type == 'Contrato Definido (Planilla)' %}
+                <span class="badge badge-pill badge-success">Tiempo Completo</span>
               {% else %}
+
                 <span class="badge badge-pill badge-info">{{ job.job_type }}</span>
               {% endif %}
 
