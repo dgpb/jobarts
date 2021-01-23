@@ -12,19 +12,28 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# environ init
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
+# reading .env file
+environ.Env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '##dt&f+p6il52@^gj=g@r0q&=v#-a2$2md0-uy&q*th^z-!#*l'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['job-arts.com', 'localhost', '127.0.0.1', '167.99.107.22', 'www.job-arts.com']
 
@@ -82,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'jobartsdb',
         'USER': 'danieldb',
-        'PASSWORD': 'Daniel_db38$',
+        'PASSWORD': env('PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5432',
 
