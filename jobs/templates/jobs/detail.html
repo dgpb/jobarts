@@ -1,5 +1,4 @@
 {% extends 'jobs/base.html' %}
-{% load social_share %}
 
 {% block title %}
 
@@ -8,12 +7,7 @@ Detalle
 {% endblock %}
 
   {% block left %}
-          {% post_to_facebook object_or_url "Post to Facebook!" %}
-          <div class="facebook-this">
-            <a href="{{ facebook_url }}" class="{{ link_class }}" target="_blank">{{link_text}}</a>
-          </div>
 
-          <hr>
           <br>
           <h1 class="text-success">{{ job.job_title_as_a_list }}</h1>
           <h6 class="text-primary">{{ job.publication_date | date:"D d M Y" }}</h6>
