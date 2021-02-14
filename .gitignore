@@ -1,2 +1,5 @@
 *.pyc
 .env
+social_post/credentials.json
+social_post/auth.py
+social_post/Li-creds.json
