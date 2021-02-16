@@ -44,7 +44,7 @@ with open('10221jobarts.json') as f:
     data = data[1:]
 
 #Update json
-with open('10221jobarts.json', 'w') as handle:
+with open('10221jobarts-test.json', 'w') as handle:
     handle.write(json.dumps(data, indent=4))
 
     print("Posted job on Facebook")
