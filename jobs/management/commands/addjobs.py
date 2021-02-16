@@ -10,7 +10,7 @@ class Command(BaseCommand):
     help = 'Set up the database'
 
     def handle(self, *args: str, **options: str):
-        with open('static/chambadata080121.json', 'r') as handle:
+        with open('static/ch_cr160221.json', 'r') as handle:
             big_json = json.loads(handle.read())
             for item in big_json:
                 if len(item['description']) == 0:
