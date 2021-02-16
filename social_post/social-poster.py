@@ -36,7 +36,7 @@ with open('10221jobarts-test.json') as f:
     graph.put_object(facebook_page_id, "feed", message="📢📢 Importante empresa esta buscando un " + data[0]['job_title'] + " en " + data[0]['city'] + " para una plaza " + data[0]['job_type'] + " . " + "No esperes más y POSTULA en 👉 " + data[0]['job_url'] + " 💼👍👍" + " #empleos #oportunidad #oportunidadlaboral #chamba #chambaparacreativos #jobarts", link=data[0]['job_url'])
 
 #Build Tweet
-with open('10221jobarts.json') as f:
+with open('10221jobarts-test.json') as f:
     data = json.load(f)
 
     message = "📢📢 Importante empresa esta buscando un " + data[0]['job_title'] + " en " + data[0]['city'] + " para una plaza " + data[0]['job_type'] + ". " + "No esperes más y POSTULA en 👉 " + data[0]['job_url'] + " 💼👍👍" + " #empleos #oportunidad #oportunidadlaboral #chamba #chambaparacreativos #jobarts"
