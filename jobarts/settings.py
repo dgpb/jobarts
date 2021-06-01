@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django_social_share',
 
     'jobs',
+    'yt_downloader',
 
 ]
 
