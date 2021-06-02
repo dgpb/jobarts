@@ -43,6 +43,7 @@ Scrapy==2.4.0
 service-identity==18.1.0
 six==1.15.0
 sqlparse==0.4.1
+supervisor==4.2.2
 Twisted==20.3.0
 twython==3.8.2
 tzlocal==2.1
